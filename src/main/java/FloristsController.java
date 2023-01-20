@@ -11,34 +11,21 @@ public class FloristsController {
     }
     //Crea un objeto de la clase StockItem y lo añade al stock.
     public void createStockItem() {
-    	//Aquí llamaría al constructor de StockItem desde dentro del método createStockItem (en vez de tener llamar al constructor
-    	//desde el main para posteriormente pasarle el objeto de la clase StockItem al método createStockItem).
-    	StockItem stockItem = new StockItem (String type, String descr, double price);
+    	StockItem stockItem = new StockItem (type, descr, price);			//Corrección de la mala sintaxis.
         model.addToStock(stockItem);
     }
     //Elimina un artículo del stock.
-    public void eliminateStockItem(int sku) {
-        //Aquí le pasaría por parámetro el sku (stock keeping unit), que es el número identificativo del artículo.
-    	if (skuExists(sku)) {						//Método que devuelve TRUE si el sku existe (por definir)
-    		stockItem = searchStockItem(sku);		//Método que devuelve un objeto de la clase StockItem al recibir un sku (por definir)
-    		model.removeFromStock(stockItem)
-    	} else {
-    		System.out.print("sku no asignado a ningún artículo de inventario")
-    	}
+    public void eliminateStockItem(String sku) {							//Cambio de tipo de la variable sku
+    	model.removeFromStock(sku);
     }
     //Crea un ticket de compra y lo añade al array de tickets.
     public void createTicket() {
-    	//Igual que antes, llamaría al constructor desde dentro del método.
     	Ticket ticket = new Ticket();
         model.addTicketToList(ticket);
     }
     //Elimina un ticket de compra.
     public void eliminateTicket(int ticketNumber) {
-    	//Igual que antes, le pasaría por parámetro el número de ticket.
-    	if (ticketNumberExists(ticketNumber)) {		//Método que devuelve TRUE si el número de ticket existe (por definir)
-    		ticket = searchTicket(ticketNumber);	//Método que devuele un objeto de la clase Ticket al recibir un número de ticket (por definir)
-    		model.removeTicketFromList(ticket);
-    	}
+    	model.removeTicketFromList(ticketNumber);
        		
     }
 }

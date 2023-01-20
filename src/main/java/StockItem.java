@@ -1,6 +1,6 @@
 public class StockItem {
 	
-	private int sku;					//Número identificativo
+	private String sku;					//Identificador
 	private String type;				//Tipo: tree/flower/deco
 	private String descr;				//Descriptivo: altura para tree, color para flower y plastic/wood para deco
 	private double value;
@@ -9,14 +9,14 @@ public class StockItem {
 		this.type = type;
 		this.descr = descr;
 		this.value = value;
-		this.sku = provideSku();		//Método para asignar un sku a cada artículo de stock (por desarrollar)
+		this.sku = type + "_" + descr;		//Nuevo sku, así no hay que crear un método que asigne un integer.
 	}
 
-	public int getSku() {
+	public String getSku() {
 		return sku;
 	}
 
-	public void setSku(int sku) {
+	public void setSku(String sku) {
 		this.sku = sku;
 	}
 
