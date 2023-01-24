@@ -1,10 +1,10 @@
 public class FloristsView {
 
-	private String name;
-	
-	public FloristView() {
-		this.name = FloristsModel.name;
-	}
+    private String name;
+
+    public FloristView() {
+        this.name = FloristsModel.name;
+    }
     //Salida por pantalla del inventario completo de la floristeria.
     public void printFullStock() {
         System.out.println("Imprime todo el stock");
@@ -15,7 +15,7 @@ public class FloristsView {
     }
     //Salida por pantalla de los tickets guardados.
     public void printTickets(){
-       System.out.println("Imprime todos los tickets");
+        System.out.println("Imprime todos los tickets");
     }
     //Salida por pantalla del valor total del stock.
     public void printStockValue(){

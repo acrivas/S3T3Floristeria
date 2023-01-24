@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,6 +15,33 @@ public class Main {
             switch (input){
                 case 1:
                     FileExist();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+                case 10:
+                    break;
+                case 11:
+                    break;
+                case 12:
+                    break;
+                case 13:
+                    break;
+                case 0:
+                    break;
             }
         }
     }
@@ -55,12 +83,25 @@ public class Main {
             CreateFile(name);
         }
     }
-    public  static void CreateFile(String name){
+    public static void CreateFile(String name){
         try{
-            FileWriter writer = new FileWriter(name + ".txt");
-            writer.write("***Floristería "+name+"***");
-            writer.close();
+            FileWriter fw = new FileWriter(name + ".txt");
+            fw.write("***Floristería "+name+"***");
+            fw.close();
             System.out.println("Se ha añadido al sistema.");
+        }catch (IOException e){
+            System.out.println("Se ha producido un error.");
+        }
+    }
+    public static void Writer(String name){
+        try{
+            FileWriter fw = new FileWriter(name + ".txt");
+            BufferedWriter bw = new BufferedWriter(fw);
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Indique que quiere añadir al archivo: ");
+            String input = sc.nextLine();
+            bw.write(input);
+            bw.close();
         }catch (IOException e){
             System.out.println("Se ha producido un error.");
         }
