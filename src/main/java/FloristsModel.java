@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class FloristsModel {
-
     private String name;
     private double stockValue;
     private double ticketsValue;
@@ -18,6 +17,7 @@ public class FloristsModel {
     public void removeFromStock(String sku) {										//Cambio de tipo de la variable sku
         System.out.println("Artículo sku = " + sku + " eliminado del stock");
     }
+
     public void addTicketToList(Ticket ticket) {
         System.out.println("Ticket " + ticket.getTicketNumber() + " creado y archivado");
     }
@@ -39,3 +39,4 @@ public class FloristsModel {
         return stockValue;
     }
 }
+
