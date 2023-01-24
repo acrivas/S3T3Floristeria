@@ -10,19 +10,22 @@ public class FloristsController {
         return model;
     }
     //Crea un objeto de la clase StockItem y lo añade al stock.
-    public void createStockItem(StockItem item) {
-        model.addToStock(item);
+    public void createStockItem() {
+    	StockItem stockItem = new StockItem (type, descr, price);			//Corrección de la mala sintaxis.
+        model.addToStock(stockItem);
     }
     //Elimina un artículo del stock.
-    public void eliminateStockItem(StockItem item) {
-        model.removeFromStock(item);
+    public void eliminateStockItem(String sku) {							//Cambio de tipo de la variable sku
+    	model.removeFromStock(sku);
     }
     //Crea un ticket de compra y lo añade al array de tickets.
-    public void createTicket(Ticket ticket) {
+    public void createTicket() {
+    	Ticket ticket = new Ticket();
         model.addTicketToList(ticket);
     }
     //Elimina un ticket de compra.
-    public void eliminateTicket(Ticket ticket) {
-        model.removeTicketFromList(ticket);
+    public void eliminateTicket(int ticketNumber) {
+    	model.removeTicketFromList(ticketNumber);
+       		
     }
 }
